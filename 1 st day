@@ -1,0 +1,38 @@
+//created class also default constructor and destructor made then dynamically allocated memory
+//used and learned static memory syntax and how it saves memory
+
+#include <iostream>
+#include<string>
+using namespace std;
+class student{
+    public:
+  static string changes;
+    string name;
+    int age;
+    int*y;//dynamic memory y is a pointer
+
+//default constructor
+student(){
+    name="default constructor";
+    cout<<name<<endl;
+    age=0;
+    cout<<age<<endl;
+    y=new int(2);
+    cout<<*y<<endl;
+}
+  ~student(){
+    delete y;
+    cout<<"y deleted"<<endl;
+  }
+};
+string student::changes;
+int main() {
+    student x,y;
+    cout << x.age<<"line 27"<<endl;
+    x.changes="it will change next line";
+  cout<<x.changes<<endl;
+  y.changes="both x and y have this now";
+  cout<<y.changes<<endl;
+  cout<<x.changes<<endl;
+  
+}
