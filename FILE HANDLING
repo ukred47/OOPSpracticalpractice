@@ -1,0 +1,24 @@
+#include <iostream>
+#include<fstream>
+using namespace std;
+int main() {
+string str;
+    ofstream i("a1.txt");
+    i<<"will it work";
+    string unm,pwd;
+    cout<<"enter unm and pwd"<<endl;
+    getline(cin,unm);
+    cin>>pwd;
+    i<<unm;
+ //   getline(i,unm);
+    i<<pwd;
+    i.close();
+    //file opened to read
+    ifstream i2("a1.txt");
+    while(getline(i2,unm)){
+        cout<<unm<<endl;
+    }
+    i2.close();
+}
+
+
